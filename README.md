@@ -1,7 +1,7 @@
 # formStorage
 **Temporarily store user input with the Web Storage API**
 
-formStorage is a small set of functions aimed at making simple data capture and retrieval possible across for simple multiple-page HTML prototypes – especially those that are cached offline – through use of the WebStorage API.
+formStorage is a small set of functions aimed at making simple data capture and retrieval possible for simple HTML prototypes across multiple pages – especially those that are cached offline – through use of the WebStorage API.
 
 
 ## Usage
@@ -35,6 +35,8 @@ All configurable options can be set as data attributes in your markup.
 #### Saving data – Data storage type
 Can be defined globally on the body tag, on a per-form basis on the form tag, or if you're feeling particularly detailed, on an individual input, select or text area tag. (default: sessionStorage)
 
+**Attribute:** ```data-setStorage```
+
 **Accepts:** 'local', 'localStorage', 'session', 'sessionStorage'.
 
 ```html
@@ -49,6 +51,10 @@ Can be defined globally on the body tag, or on an element-by-element-basis. (def
 
 If you have specified an alternative storage type for saving data, this needs to match.
 
+**Attribute:** ```data-getStorage```
+
+**Accepts:** 'local', 'localStorage', 'session', 'sessionStorage'.
+
 ```html
 <p>
 	<span data-name="field-name" data-setStorage="localStorage">Data appears here</span>
@@ -60,6 +66,7 @@ If you have specified an alternative storage type for saving data, this needs to
 
 Set on an individual form field
 
+**Attribute:** ```data-ignoreField```
 
 **Accepts:** 'true', 'yes'.
 
@@ -70,6 +77,8 @@ Set on an individual form field
 ### Ignore a form's action
 
 Set on a form-by-form basis (default: false)
+
+**Attribute:** ```data-ignoreAction```
 
 **Accepts:** 'true', 'yes', 'false', 'no'.
 
@@ -83,6 +92,8 @@ Set on a form-by-form basis (default: false)
 Any data entered into password inputs will be replaced by * characters by default. Mainly for debugging purposes/possible future extension with validation or similar, this option overrides this feature.
 
 Set on a form-by-form basis (default: true)
+
+**Attribute:** ```data-hidePasswords```
 
 **Accepts:** 'true', 'yes', 'false', 'no'.
 
